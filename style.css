@@ -1,39 +1,314 @@
-:root{--bg:#f4f6fa;--ink:#16213a;--sub:#5b6577;--line:#d9dee8;--card:#fff;--acc:#1f5fa8;--ok:#1b7f4b;--ng:#b3261e;--t:#1d8a7a;--m:#6a5acd;--s:#d4693a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Noto Sans JP","Hiragino Sans","Noto Sans Myanmar",sans-serif}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 24px;background:var(--ink);color:#fff}
-h1{margin:0;font-size:20px}h1 small{color:#8ec1ff;font-weight:500}
-nav{display:flex;gap:6px}
-button{font:inherit;font-size:14px;padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
-button:hover{border-color:var(--acc)}
-nav button{background:transparent;color:#cfd8ea;border-color:transparent}
-nav button.on{background:var(--acc);color:#fff}
-.main{background:var(--acc);color:#fff;border-color:var(--acc)}
-main{max-width:1000px;margin:0 auto;padding:20px}
-input,textarea{width:100%;font:inherit;font-size:15px;padding:8px 10px;margin-bottom:8px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
-:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-.bar{display:flex;gap:8px}.bar input{margin:0}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
-.chips button{border-radius:999px}.chips button.on{background:var(--ink);color:#fff}
-.prog{color:var(--sub);font-size:14px;margin:6px 0 12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.tc{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px 12px 18px;overflow:hidden}
-.tc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
-.tc.t{--c:var(--t)}.tc.m{--c:var(--m)}.tc.s{--c:var(--s)}
-.tc.done{background:#eef8f2}
-.tc h3{margin:0;font-size:16px}.tc .cat{font-size:12px;color:var(--sub)}
-.tc p{margin:4px 0;font-size:14px}.tc .my{color:var(--sub)}
-.tc .row{margin-top:8px}.tc button{font-size:13px;padding:4px 10px}
-.row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-.box h2{margin:0 0 10px;font-size:17px}
-.q{font-size:17px;margin:0 0 12px}
-.ch{display:block;width:100%;text-align:left;margin-bottom:8px;padding:10px 14px}
-.ch.ok{background:#e6f5ec;border-color:var(--ok)}.ch.ng{background:#fdecea;border-color:var(--ng)}
-.ex{margin-top:12px;padding:12px;background:var(--bg);border-radius:8px;font-size:14px}
-.ex .my{color:var(--sub)}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start}
-.fc{min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer;font-size:20px}
-.fc small{font-size:13px;color:var(--sub)}
-.err{color:var(--ng);font-size:13px;min-height:18px;margin:4px 0 0}
-button{white-space:nowrap}.tc details{font-size:14px;margin-top:6px}.tc summary{cursor:pointer;color:var(--acc)}.kw{margin:2px 0!important;font-size:13px!important}
+:root {
+    --bg: #f4f6fa;
+    --ink: #16213a;
+    --sub: #5b6577;
+    --line: #d9dee8;
+    --card: #fff;
+    --acc: #1f5fa8;
+    --ok: #1b7f4b;
+    --ng: #b3261e;
+    --t: #1d8a7a;
+    --m: #6a5acd;
+    --s: #d4693a
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "Noto Sans JP", "Hiragino Sans", "Noto Sans Myanmar", sans-serif
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 14px 24px;
+    background: var(--ink);
+    color: #fff
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px
+}
+
+h1 small {
+    color: #8ec1ff;
+    font-weight: 500
+}
+
+nav {
+    display: flex;
+    gap: 6px
+}
+
+button {
+    font: inherit;
+    font-size: 14px;
+    padding: 7px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer
+}
+
+button:hover {
+    border-color: var(--acc)
+}
+
+nav button {
+    background: transparent;
+    color: #cfd8ea;
+    border-color: transparent
+}
+
+nav button.on {
+    background: var(--acc);
+    color: #fff
+}
+
+.main {
+    background: var(--acc);
+    color: #fff;
+    border-color: var(--acc)
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px
+}
+
+input,
+textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink)
+}
+
+:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px
+}
+
+.bar {
+    display: flex;
+    gap: 8px
+}
+
+.bar input {
+    margin: 0
+}
+
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 12px 0
+}
+
+.chips button {
+    border-radius: 999px
+}
+
+.chips button.on {
+    background: var(--ink);
+    color: #fff
+}
+
+.prog {
+    color: var(--sub);
+    font-size: 14px;
+    margin: 6px 0 12px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 12px
+}
+
+.tc {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px 12px 18px;
+    overflow: hidden
+}
+
+.tc::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--c)
+}
+
+.tc.t {
+    --c: var(--t)
+}
+
+.tc.m {
+    --c: var(--m)
+}
+
+.tc.s {
+    --c: var(--s)
+}
+
+.tc.done {
+    background: #eef8f2
+}
+
+.tc h3 {
+    margin: 0;
+    font-size: 16px
+}
+
+.tc .cat {
+    font-size: 12px;
+    color: var(--sub)
+}
+
+.tc p {
+    margin: 4px 0;
+    font-size: 14px
+}
+
+.tc .my {
+    color: var(--sub)
+}
+
+.tc .row {
+    margin-top: 8px
+}
+
+.tc button {
+    font-size: 13px;
+    padding: 4px 10px
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap
+}
+
+.box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px
+}
+
+.box h2 {
+    margin: 0 0 10px;
+    font-size: 17px
+}
+
+.q {
+    font-size: 17px;
+    margin: 0 0 12px
+}
+
+.ch {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px;
+    padding: 10px 14px
+}
+
+.ch.ok {
+    background: #e6f5ec;
+    border-color: var(--ok)
+}
+
+.ch.ng {
+    background: #fdecea;
+    border-color: var(--ng)
+}
+
+.ex {
+    margin-top: 12px;
+    padding: 12px;
+    background: var(--bg);
+    border-radius: 8px;
+    font-size: 14px
+}
+
+.ex .my {
+    color: var(--sub)
+}
+
+.two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    align-items: start
+}
+
+.fc {
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px
+}
+
+.fc small {
+    font-size: 13px;
+    color: var(--sub)
+}
+
+.err {
+    color: var(--ng);
+    font-size: 13px;
+    min-height: 18px;
+    margin: 4px 0 0
+}
+
+button {
+    white-space: nowrap
+}
+
+.tc details {
+    font-size: 14px;
+    margin-top: 6px
+}
+
+.tc summary {
+    cursor: pointer;
+    color: var(--acc)
+}
+
+.kw {
+    margin: 2px 0 !important;
+    font-size: 13px !important
+}
