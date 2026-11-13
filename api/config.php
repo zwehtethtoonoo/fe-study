@@ -1,1 +1,2 @@
+<?php 
 new PDO('mysql:host=localhost;dbname=fe_study;charset=utf8mb4', 'fe-study-user', 'pass', [...]);
