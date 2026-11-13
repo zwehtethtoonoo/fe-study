@@ -43,3 +43,15 @@ body{padding-bottom:env(safe-area-inset-bottom,0px)}
 .posbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}.posbar .prog{margin:0}.seg{display:flex}.seg button{font-size:13px;padding:4px 10px;border-radius:0;margin-left:-1px}.seg button:first-child{border-radius:8px 0 0 8px;margin-left:0}.seg button:last-child{border-radius:0 8px 8px 0}.seg button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .row input{margin:0;flex:1;min-width:0}
 #cards summary{cursor:pointer;color:var(--acc);font-size:14px;margin:6px 0}
+nav{align-items:center}nav a{color:#cfd8ea;text-decoration:none;font-size:14px;padding:7px 14px;border-radius:8px}nav a.on{background:var(--acc);color:#fff}
+nav form{margin:0}nav form button{background:transparent;color:#cfd8ea;border-color:transparent}
+form{margin:0}a.btn,a.chip{display:inline-block;font-size:14px;padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);text-decoration:none}
+a.chip{border-radius:999px;padding:5px 12px;font-size:13px}a.chip.on{background:var(--ink);color:var(--bg)}a.btn.main{background:var(--acc);color:#fff;border-color:var(--acc)}
+input[type=checkbox]{width:auto;margin:0 4px 0 0}input[type=file]{width:auto;margin:0;font-size:13px}
+div.ch{border:1px solid var(--line);border-radius:8px;background:var(--card)}details summary{cursor:pointer;color:var(--acc)}
+.fc details{margin-top:12px;font-size:16px}.fc .back{margin:8px 0}.bar label{align-self:center;font-size:14px}.ex p{margin:10px 0 0}
+label.btn{display:inline-block;font-size:14px;padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+label.btn:hover,a.btn:hover{border-color:var(--acc)}
+dialog.pop{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:20px 24px;min-width:260px;max-width:90vw;text-align:center;font:inherit}
+dialog.pop p{margin:0 0 14px;font-size:16px}dialog.pop::backdrop{background:rgba(0,0,0,.55)}
+dialog.pop:not(:modal)[open]{position:fixed;inset:0;margin:auto;height:fit-content;z-index:10;box-shadow:0 0 0 100vmax rgba(0,0,0,.55)}
