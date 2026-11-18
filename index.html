@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基本情報技術者試験 学習サイト</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>基本情報技術者試験 <small>FE</small></h1>
+  <nav>
+    <button data-v="topics" class="on">分野</button>
+    <button data-v="practice">練習問題</button>
+    <button data-v="cards">フラッシュカード</button>
+  </nav>
+</header>
+<main>
+<section id="topics">
+  <div class="bar">
+    <input id="search" type="search" placeholder="用語を検索（例：正規化）">
+    <button id="markOnly">★ ブックマーク</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <p class="prog" id="prog"></p>
+  <div class="grid" id="grid"></div>
+</section>
+<section id="practice" hidden>
+  <p class="prog" id="score"></p>
+  <div class="box" id="qbox"></div>
+</section>
+<section id="cards" hidden>
+  <div class="two">
+    <div class="box">
+      <h2>ノートを書く</h2>
+      <input id="f1" placeholder="表：用語（日本語）">
+      <input id="f2" placeholder="裏：意味（日本語またはミャンマー語）">
+      <textarea id="f3" rows="3" placeholder="メモ（任意）"></textarea>
+      <button id="save" class="main">カードを保存</button>
+      <p class="err" id="err"></p>
+      <div class="row">
+        <button id="exp">書き出し</button>
+        <button id="imp">読み込み</button>
+        <input id="file" type="file" accept=".json" hidden>
+      </div>
+    </div>
+    <div>
+      <p class="prog" id="pos"></p>
+      <div class="fc" id="card" tabindex="0" role="button"></div>
+      <div class="row">
+        <button id="again">もう一度</button>
+        <button id="know">覚えた</button>
+        <button id="del">削除</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script src="topics.js"></script>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
