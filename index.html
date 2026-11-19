@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>基本情報技術者試験 学習サイト</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header>
@@ -41,11 +41,14 @@
       <div class="row">
         <button id="exp">書き出し</button>
         <button id="imp">読み込み</button>
+        <button id="dedupe">重複を削除</button>
+        <button id="delall" class="danger">全て削除</button>
         <input id="file" type="file" accept=".json" hidden>
       </div>
+      <dialog id="pop" class="pop"><p id="popmsg"></p><div class="row" id="popbtns"></div></dialog>
     </div>
     <div>
-      <p class="prog" id="pos"></p>
+      <div class="posbar"><p class="prog" id="pos"></p><div class="seg" id="order" role="group" aria-label="表示順"><button data-o="old">古い順</button><button data-o="new">新しい順</button><button data-o="rnd">ランダム</button></div></div>
       <div class="fc" id="card" tabindex="0" role="button"></div>
       <div class="row">
         <button id="again">もう一度</button>
@@ -55,9 +58,10 @@
     </div>
   </div>
 </section>
+<p class="prog" style="text-align:center">バージョン 3</p>
 </main>
-<script src="topics.js"></script>
-<script src="questions.js"></script>
-<script src="app.js"></script>
+<script src="topics.js?v=3"></script>
+<script src="questions.js?v=3"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
